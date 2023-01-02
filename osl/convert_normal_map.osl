@@ -1,0 +1,8 @@
+shader create_blue_channel_normal
+[[ string help = "Create the missing blue channel for the given normal map" ]]
+(
+    color TexIn = color(0.0, 0.0, 1.0),
+    output color TexOut = 0.0)
+{
+    TexOut = sqrt(1 - (TexIn.r * TexIn.r) - (TexIn.g * TexIn.g));
+}
